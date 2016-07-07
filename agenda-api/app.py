@@ -49,7 +49,7 @@ auth = HTTPBasicAuth()
 """ Password checking """
 @auth.get_password
 def get_password( username ):
-	if username == "ryan":
+	if username == "test":
 		return "flask_agenda"
 	return None
 
