@@ -1,4 +1,4 @@
-#!flask/bin/python
+#!/usr/bin/python
 
 from flask import Flask, jsonify, make_response, abort
 from flask.ext.httpauth import HTTPBasicAuth
@@ -60,7 +60,7 @@ def unauthorized():
 ################################################################################
 """ Get all of the assignments """
 @app.route('/', methods=['GET'])
-@auth.login_required
+#@auth.login_required
 def index():
 	return jsonify({'assignments': assignments})
 
