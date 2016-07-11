@@ -3,7 +3,7 @@
 from flask import Flask, jsonify, make_response, abort
 from flask.ext.httpauth import HTTPBasicAuth
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path= "")
 
 assignments = [
 	{
@@ -61,7 +61,7 @@ def unauthorized():
 """ Get all of the assignments """
 @app.route('/', methods=['GET'])
 #@auth.login_required
-def index():
+def get_assignments():
 	return jsonify({'assignments': assignments})
 
 """ This allows you to search for all assignments from a specific source """
